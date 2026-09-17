@@ -5,14 +5,11 @@ const ContactItem = ({ contact, setContacts, ...props }) => {
         setContacts((prev) => prev.filter((c) => c.id !== id));
     };
 
-    const detailUrl =
-        `/contact/${contact.id}?nome=${encodeURIComponent(contact.nome)}&email=${encodeURIComponent(contact.email)}&telefone=${encodeURIComponent(contact.telefone)}`;
-
     return (
         <li {...props} className="p-4 flex items-center justify-between">
             <div>
                 <Link
-                    href={detailUrl}
+                    href={`/contact/${contact.id}`}
                     className="font-medium text-gray-900 hover:text-blue-600 transition-colors"
                 >
                     {contact.nome}
