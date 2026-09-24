@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { memo } from "react";
 
-const ContactItem = ({ contact, setContacts, ...props }) => {
+const ContactItem = memo(({ contact, setContacts, ...props }) => {
     const handleRemove = (id) => {
         setContacts((prev) => prev.filter((c) => c.id !== id));
     };
@@ -26,6 +27,6 @@ const ContactItem = ({ contact, setContacts, ...props }) => {
             </button>
         </li>
     )
-}
+})
 
 export default ContactItem
